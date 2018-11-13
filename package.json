@@ -22,13 +22,21 @@
     "@opam/lambda-term": "*",
     "@opam/lwt": "*",
     "@esy-ocaml/reason": "*",
+    "@esy-ocaml/rtop": "*",
     "refmterr": "*",
     "ocaml": "~4.6.0"
   },
   "resolutions": {
-    "@esy-ocaml/esy-installer": "0.0.1",
-    "@opam/menhir": "20171013",
-    "@opam/re": "1.8.0"
+    "@esy-ocaml/reason": "link:./reason/reason.opam",
+    "@esy-ocaml/rtop": {
+      "source": "link:./reason/rtop.opam",
+      "override": {
+	"dependencies": {
+	  "@opam/reason": null,
+	  "@esy-ocaml/reason": "*"
+	}
+      }
+    }
   },
   "devDependencies": {
     "@esy-ocaml/merlin": "*",
